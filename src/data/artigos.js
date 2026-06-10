@@ -29,6 +29,11 @@ export const artigos = [
       <h2>4. Cuidado com o excesso de adoçantes e refrigerantes</h2>
       <p>Bebidas gaseificadas introduzem gás direto no sistema digestivo, e alguns adoçantes (como sorbitol e maltitol) fermentam no intestino, causando gases e desconforto.</p>
 
+      <div class="post-cta">
+        <p>Se a barriga inchada é uma constante na sua vida, esses ajustes ajudam — mas identificar a causa exata acelera muito o resultado. Uma avaliação individualizada mapeia o que está inflando você.</p>
+        <a class="btn btn--gold" href="https://wa.me/5534991570494" target="_blank" rel="noopener">Falar com o nutricionista</a>
+      </div>
+
       <h2>5. Movimente o corpo</h2>
       <p>Uma caminhada leve após as refeições ajuda o intestino a trabalhar e reduz a sensação de estufamento. Não precisa ser treino pesado — constância vale mais que intensidade.</p>
 
@@ -38,8 +43,39 @@ export const artigos = [
       <h2>7. Tenha horários e durma bem</h2>
       <p>O intestino gosta de rotina. Refeições em horários parecidos e uma boa noite de sono regulam os hormônios que controlam a fome e o funcionamento digestivo.</p>
 
+      <h2>Alimentos que ajudam a desinchar</h2>
+      <p>Alguns alimentos têm efeito prático contra o inchaço e a retenção:</p>
+      <ul>
+        <li><strong>Ricos em potássio</strong> (banana, abacate, água de coco, batata): ajudam a equilibrar o sódio e a reduzir a retenção;</li>
+        <li><strong>Diuréticos naturais</strong> (melancia, abacaxi, pepino, chá de hibisco ou cavalinha): auxiliam a eliminar o excesso de líquidos;</li>
+        <li><strong>Iogurte natural e kefir</strong>: fortalecem a flora intestinal e melhoram a digestão;</li>
+        <li><strong>Gengibre e hortelã</strong>: têm ação digestiva e reduzem a sensação de estufamento;</li>
+        <li><strong>Mamão e kiwi</strong>: regulam o intestino — intestino preso é uma das maiores causas de barriga inchada.</li>
+      </ul>
+      <p>Se o seu caso envolve intestino lento, vale ler também o guia completo de <a href="/dicas/intestino-preso-o-que-comer/">o que comer para soltar o intestino preso</a>.</p>
+
+      <h2>Exemplo de um dia "anti-inchaço"</h2>
+      <ul>
+        <li><strong>Café da manhã:</strong> mamão com aveia e chia + ovos mexidos + chá de gengibre;</li>
+        <li><strong>Almoço:</strong> arroz + feijão bem cozido + frango grelhado + salada de folhas com pepino e azeite;</li>
+        <li><strong>Lanche:</strong> iogurte natural com banana;</li>
+        <li><strong>Jantar:</strong> peixe assado + legumes refogados + batata;</li>
+        <li><strong>Ao longo do dia:</strong> água distribuída (30–35 ml/kg), mastigação caprichada e uma caminhada leve.</li>
+      </ul>
+      <p>Note que não há nada "milagroso": é comida de verdade, organizada do jeito certo. É assim que o resultado se sustenta — o mesmo princípio que explico em <a href="/dicas/o-que-comer-para-emagrecer-com-saude/">o que comer para emagrecer com saúde</a>.</p>
+
+      <h2>Perguntas frequentes sobre barriga inchada</h2>
+      <h3>Barriga inchada pode ser intolerância à lactose ou ao glúten?</h3>
+      <p>Pode, mas não é a regra. Cortar grupos alimentares por conta própria empobrece a dieta e atrasa o diagnóstico. O caminho certo é testar de forma estruturada, com acompanhamento profissional.</p>
+      <h3>Chá desincha mesmo?</h3>
+      <p>Chás como hibisco e cavalinha têm leve efeito diurético e ajudam na retenção de líquidos, mas não resolvem a causa. Sem ajustar alimentação, mastigação e intestino, o inchaço volta.</p>
+      <h3>Quanto tempo leva para desinchar?</h3>
+      <p>Quando a causa é retenção e digestão, muitas pessoas notam diferença em 3 a 7 dias de ajustes consistentes. Quadros ligados à flora intestinal ou intolerâncias levam mais tempo e pedem investigação.</p>
+      <h3>Inchaço pode ser algo mais sério?</h3>
+      <p>Inchaço persistente acompanhado de dor forte, perda de peso sem explicação ou sangue nas fezes merece avaliação médica imediata.</p>
+
       <h2>Quando procurar um nutricionista</h2>
-      <p>Se o inchaço é frequente, vem acompanhado de dor, prisão de ventre ou diarreia, ou não melhora com esses ajustes, é hora de investigar a causa. Em consulta, avaliamos sua rotina, exames e sintomas para montar um plano individual — sem dietas malucas e sem cortar alimentos sem necessidade.</p>
+      <p>Se o inchaço é frequente, vem acompanhado de dor, prisão de ventre ou diarreia, ou não melhora com esses ajustes, é hora de investigar a causa. Como nutricionista clínico (CRN 9.9877), eu avalio sua rotina, exames e sintomas para montar um plano individual — sem dietas malucas e sem cortar alimentos sem necessidade. Para se aprofundar nas recomendações oficiais de alimentação, vale conhecer o <a href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/eu-quero-me-alimentar-melhor/noticias/2021/guia-alimentar-para-a-populacao-brasileira" target="_blank" rel="noopener nofollow">Guia Alimentar para a População Brasileira</a>.</p>
     `,
   },
   {
@@ -68,6 +104,11 @@ export const artigos = [
       <h2>Proteína em todas as refeições</h2>
       <p>A proteína é a maior aliada do emagrecimento: aumenta a saciedade, preserva a massa muscular e gasta mais energia para ser digerida. Tente incluir uma fonte em cada refeição.</p>
 
+      <div class="post-cta">
+        <p>Se você já tentou de tudo e o peso volta sempre, o problema não é você — é o método. Um plano individualizado, calculado para o seu corpo e a sua rotina, muda esse jogo.</p>
+        <a class="btn btn--gold" href="https://wa.me/5534991570494" target="_blank" rel="noopener">Quero um plano para mim</a>
+      </div>
+
       <h2>Por que dietas radicais sabotam</h2>
       <p>Cortes drásticos de calorias derrubam o metabolismo, aumentam a fome e a irritabilidade, e quase sempre terminam em compulsão. O peso até cai no começo, mas o corpo "revida" depois. Resultado que dura vem de mudanças sustentáveis.</p>
 
@@ -79,8 +120,30 @@ export const artigos = [
         <li>Constância: o que você faz na maior parte do tempo importa mais do que um deslize.</li>
       </ul>
 
+      <h2>Erros que travam o emagrecimento (e quase ninguém percebe)</h2>
+      <ul>
+        <li><strong>"Compensar" pulando refeições:</strong> aumenta a fome e termina em exagero à noite;</li>
+        <li><strong>Calorias líquidas:</strong> sucos, refrigerantes e bebidas alcoólicas somam muito sem matar a fome;</li>
+        <li><strong>Comer "fit" demais e de verdade de menos:</strong> barrinhas e produtos diet/light são ultraprocessados com outra roupa;</li>
+        <li><strong>Dormir mal:</strong> uma noite ruim aumenta a fome e o desejo por doce no dia seguinte — se esse é o seu caso, veja <a href="/dicas/diminuir-vontade-de-doce/">como controlar a vontade de doce</a>;</li>
+        <li><strong>Olhar só a balança:</strong> medidas, fotos, disposição e roupas contam uma história mais fiel que o peso isolado.</li>
+      </ul>
+
+      <h2>Quanto peso dá para perder de forma saudável?</h2>
+      <p>Um ritmo sustentável fica em torno de 0,5 a 1 kg por semana, dependendo do seu ponto de partida. Mais rápido que isso, em geral, significa perder água e músculo — o que derruba o metabolismo e prepara o efeito sanfona. Emagrecer bem é perder <strong>gordura</strong> preservando massa muscular.</p>
+
+      <h2>Perguntas frequentes sobre emagrecer com saúde</h2>
+      <h3>Preciso cortar carboidrato para emagrecer?</h3>
+      <p>Não. O que define o emagrecimento é o balanço energético e a qualidade do que você come. Carboidratos de verdade (arroz, batata, frutas, raízes) cabem — e ajudam a manter o plano de pé.</p>
+      <h3>Posso comer doce durante o emagrecimento?</h3>
+      <p>Pode, de forma planejada. A proibição total aumenta a compulsão. O segredo é a dose e o contexto, não o "nunca mais".</p>
+      <h3>Por que eu emagreço e depois engordo tudo de novo?</h3>
+      <p>Porque dietas radicais não ensinam o corpo (nem você) a viver no novo peso. Sem reeducação e sem preservar músculo, o metabolismo cai e a fome aumenta — a combinação perfeita do efeito sanfona.</p>
+      <h3>Dieta dos famosos / da moda funciona?</h3>
+      <p>Qualquer dieta que corte muito gera perda de peso no curto prazo. A pergunta certa é: dá para viver assim? Se a resposta é não, o resultado vai embora junto com a dieta.</p>
+
       <h2>O segredo é a individualização</h2>
-      <p>Não existe dieta única que sirva para todo mundo. A quantidade ideal de comida, os melhores horários e os ajustes dependem da sua rotina, do seu metabolismo e dos seus objetivos. Em consulta, montamos um plano feito para a sua vida real — para você emagrecer comendo bem e manter o resultado.</p>
+      <p>Não existe dieta única que sirva para todo mundo. A quantidade ideal de comida, os melhores horários e os ajustes dependem da sua rotina, do seu metabolismo e dos seus objetivos. Como nutricionista clínico (CRN 9.9877), eu monto um plano feito para a sua vida real — para você emagrecer comendo bem e manter o resultado. As diretrizes oficiais do <a href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/eu-quero-me-alimentar-melhor/noticias/2021/guia-alimentar-para-a-populacao-brasileira" target="_blank" rel="noopener nofollow">Guia Alimentar para a População Brasileira</a> reforçam o mesmo princípio: comida de verdade como base da alimentação.</p>
     `,
   },
   {
@@ -108,6 +171,11 @@ export const artigos = [
       <h2>Água é parte essencial</h2>
       <p>De nada adianta comer muita fibra e beber pouca água — pode até piorar. As fibras precisam de líquido para "inchar" e amolecer as fezes. Capriche na hidratação ao longo do dia.</p>
 
+      <div class="post-cta">
+        <p>Convive com o intestino preso há meses (ou anos)? Isso tem solução — mas cada intestino tem uma causa. Uma avaliação individualizada identifica a sua e monta o plano certo.</p>
+        <a class="btn btn--gold" href="https://wa.me/5534991570494" target="_blank" rel="noopener">Quero regular meu intestino</a>
+      </div>
+
       <h2>Movimento e rotina no banheiro</h2>
       <p>A atividade física estimula os movimentos do intestino. E vale criar o hábito de ir ao banheiro sempre no mesmo horário, sem pressa e sem segurar a vontade — o intestino responde à rotina.</p>
 
@@ -123,8 +191,32 @@ export const artigos = [
         <li>Estresse e sono ruim.</li>
       </ul>
 
+      <h2>Cardápio de um dia amigo do intestino</h2>
+      <ul>
+        <li><strong>Ao acordar:</strong> 1 copo grande de água + 1 kiwi ou ameixa;</li>
+        <li><strong>Café da manhã:</strong> mamão com aveia, chia hidratada e iogurte natural;</li>
+        <li><strong>Almoço:</strong> arroz integral + feijão + carne magra + salada variada com azeite;</li>
+        <li><strong>Lanche:</strong> fruta com casca + castanhas;</li>
+        <li><strong>Jantar:</strong> legumes refogados + omelete + batata-doce;</li>
+        <li><strong>Regra de ouro:</strong> fibra sempre acompanhada de água ao longo do dia.</li>
+      </ul>
+      <p>O intestino preso costuma andar junto com a barriga estufada — se esse é o seu caso, veja também <a href="/dicas/como-desinchar-a-barriga/">como desinchar a barriga</a>.</p>
+
+      <h2>Laxante faz mal?</h2>
+      <p>O uso frequente de laxantes irritativos, por conta própria, pode deixar o intestino cada vez mais "preguiçoso" e dependente, além de mascarar a causa real. Eles têm seu lugar — mas com indicação e acompanhamento, nunca como rotina.</p>
+
+      <h2>Perguntas frequentes sobre intestino preso</h2>
+      <h3>Quantas vezes por semana é normal ir ao banheiro?</h3>
+      <p>Há variação individual, mas menos de 3 evacuações por semana, com esforço ou fezes muito ressecadas, já configura constipação e merece atenção.</p>
+      <h3>Qual fruta é mais indicada para soltar o intestino?</h3>
+      <p>Mamão, ameixa (fresca ou seca hidratada), kiwi e laranja com bagaço são as campeãs — sempre com boa hidratação junto.</p>
+      <h3>Probiótico resolve intestino preso?</h3>
+      <p>Pode ajudar como parte da estratégia, mas não substitui fibra, água e rotina. E a cepa certa varia conforme o caso — por isso a individualização importa.</p>
+      <h3>Intestino preso engorda?</h3>
+      <p>Não engorda no sentido de gordura, mas causa inchaço, desconforto e peso na balança pela retenção de fezes. Regular o intestino "desincha" visivelmente.</p>
+
       <h2>Quando buscar ajuda</h2>
-      <p>Se o intestino preso é persistente, dói, alterna com diarreia ou apareceu de repente, é importante investigar. Em consulta, avaliamos sua alimentação, hidratação, rotina e exames para montar um plano que regule o intestino de forma natural e duradoura.</p>
+      <p>Se o intestino preso é persistente, dói, alterna com diarreia ou apareceu de repente, é importante investigar. Como nutricionista clínico (CRN 9.9877), eu avalio sua alimentação, hidratação, rotina e exames para montar um plano que regule o intestino de forma natural e duradoura. Você também pode consultar as recomendações de alimentação saudável da <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank" rel="noopener nofollow">Organização Mundial da Saúde</a>.</p>
     `,
   },
   {
@@ -179,6 +271,27 @@ export const artigos = [
       <h2>Hábitos que vão além do prato</h2>
       <p>O músculo é o maior "consumidor" de glicose do corpo: por isso, atividade física (mesmo caminhada) melhora muito a sensibilidade à insulina. Somam-se a isso dormir bem e controlar o estresse — dois fatores que, quando ignorados, sabotam qualquer dieta.</p>
 
+      <h2>Como o diagnóstico é feito na prática</h2>
+      <p>Não existe um exame único e isolado que "carimbe" a resistência à insulina. O quadro é montado como um quebra-cabeça: glicemia e insulina de jejum (que permitem calcular o índice <strong>HOMA-IR</strong>), hemoglobina glicada, triglicérides, HDL e a circunferência abdominal — tudo interpretado junto com os seus sintomas e histórico.</p>
+      <p>Um detalhe importante: é comum a glicemia estar <strong>normal</strong> por anos enquanto a insulina já está alta. É por isso que muita gente recebe um "está tudo bem" no check-up e continua acumulando gordura abdominal e cansaço. Olhar só a glicose é ver metade do filme.</p>
+
+      <h2>Plano prático: por onde começar esta semana</h2>
+      <ul>
+        <li><strong>Dia 1–2:</strong> tire os líquidos doces (refrigerante, suco com açúcar, café adoçado). É o corte de melhor custo-benefício;</li>
+        <li><strong>Dia 3–4:</strong> garanta proteína no café da manhã (ovos, queijo, iogurte natural) — segura a glicose o dia inteiro;</li>
+        <li><strong>Dia 5:</strong> adicione 1 prato de salada antes do carboidrato no almoço e no jantar;</li>
+        <li><strong>Dia 6:</strong> caminhe 20–30 minutos (de preferência após uma refeição);</li>
+        <li><strong>Dia 7:</strong> durma 7–8 horas — o sono ruim de uma única noite já piora a resposta à insulina no dia seguinte.</li>
+      </ul>
+      <p>Parece simples — e é. Consistência nesses pontos, semana após semana, muda exames e medidas.</p>
+
+      <h2>Mitos que atrapalham</h2>
+      <ul>
+        <li><strong>"Resistência à insulina é só de quem está acima do peso"</strong> — pessoas magras também desenvolvem, especialmente com sedentarismo e dieta ruim;</li>
+        <li><strong>"Fruta é proibida"</strong> — fruta inteira, com fibra, é aliada; o problema é o suco coado e o excesso;</li>
+        <li><strong>"Só remédio resolve"</strong> — a base do tratamento é estilo de vida; a medicação, quando indicada, complementa.</li>
+      </ul>
+
       <h2>Perguntas frequentes</h2>
       <h3>Resistência à insulina tem cura?</h3>
       <p>Na maioria dos casos ela é reversível com mudança de alimentação, atividade física, sono e perda de gordura abdominal — especialmente quando tratada cedo.</p>
@@ -231,6 +344,24 @@ export const artigos = [
       </ul>
       <p>Muitas vezes a vontade intensa de doce também é sinal de <a href="/dicas/resistencia-insulina-sinais/">resistência à insulina</a> — vale conhecer os sinais. E para organizar o prato como um todo, veja <a href="/dicas/o-que-comer-para-emagrecer-com-saude/">o que comer para emagrecer com saúde</a>.</p>
 
+      <h2>O que fazer na hora em que a vontade bater</h2>
+      <p>Estratégia de 4 passos para o momento crítico (fim de tarde, depois do jantar, TPM):</p>
+      <ul>
+        <li><strong>1. Espere 10 minutos:</strong> a onda do desejo sobe, faz pico e desce. Beba um copo de água e mude de ambiente;</li>
+        <li><strong>2. Cheque a fome real:</strong> se você comeria uma fruta, é fome — coma algo de verdade. Se só serve o doce, é desejo;</li>
+        <li><strong>3. Se for comer o doce, coma sentado e presente:</strong> porção definida, sem culpa e sem "já que comi, vou até o fim";</li>
+        <li><strong>4. Note o gatilho:</strong> cansaço? estresse? tédio? Identificar o padrão vale mais que qualquer proibição.</li>
+      </ul>
+
+      <h2>Trocas mais inteligentes (sem virar refém de "fit")</h2>
+      <ul>
+        <li>Chocolate ao leite → <strong>chocolate 60–70% cacau</strong> (1–2 quadradinhos satisfazem mais);</li>
+        <li>Sobremesa todo dia → <strong>fruta + iogurte natural com canela</strong> na semana, sobremesa de verdade no fim de semana;</li>
+        <li>Doce escondido na gaveta → <strong>doce planejado no mercado</strong>: porção individual, comprada na hora, sem estoque em casa;</li>
+        <li>Suco e refrigerante → <strong>água com gás + limão</strong> nas refeições.</li>
+      </ul>
+      <p>O objetivo não é nunca mais comer doce — é o doce virar escolha, não impulso.</p>
+
       <h2>Perguntas frequentes</h2>
       <h3>Cortar o açúcar de uma vez funciona?</h3>
       <p>Para a maioria das pessoas, o corte radical aumenta a obsessão e termina em compulsão. Reduzir de forma gradual, melhorando as refeições, costuma ser mais sustentável.</p>
@@ -282,6 +413,21 @@ export const artigos = [
         <li><strong>Cuidado com o excesso de café</strong>, que mascara o cansaço e atrapalha o sono.</li>
       </ul>
       <p>Vale lembrar que oscilações de energia e fome também aparecem na <a href="/dicas/resistencia-insulina-sinais/">resistência à insulina</a>, e que montar bem o prato faz diferença — veja <a href="/dicas/o-que-comer-para-emagrecer-com-saude/">como montar refeições equilibradas</a>.</p>
+
+      <h2>Um dia alimentar pró-energia (exemplo)</h2>
+      <ul>
+        <li><strong>Café da manhã:</strong> ovos mexidos + pão integral + mamão. Café puro depois (não no lugar) da comida;</li>
+        <li><strong>Almoço:</strong> arroz + feijão + carne ou frango + salada colorida com azeite. Prato equilibrado = tarde sem sonolência;</li>
+        <li><strong>Lanche:</strong> iogurte natural + banana + castanhas;</li>
+        <li><strong>Jantar:</strong> leve, 2–3 h antes de dormir (omelete com legumes), para não atrapalhar o sono;</li>
+        <li><strong>Cafeína:</strong> última dose até 8 horas antes de deitar — depois disso ela rouba o sono profundo que devolveria sua energia.</li>
+      </ul>
+
+      <h2>Suplemento para energia: quando faz sentido?</h2>
+      <p>Suplementar ferro, vitamina D ou B12 só faz sentido quando o exame mostra deficiência — aí o efeito na disposição é real. Tomar "polivitamínico para energia" sem saber o que falta é gastar dinheiro e, no caso do ferro, pode até fazer mal. Primeiro o diagnóstico, depois a dose certa, pelo tempo certo.</p>
+
+      <h2>Sinais de alerta que pedem avaliação médica</h2>
+      <p>Cansaço acompanhado de falta de ar, palpitações, perda de peso sem explicação, queda de cabelo intensa, pele muito seca ou tristeza persistente merece investigação médica além da nutricional — algumas causas (tireoide, anemia importante, depressão) precisam de tratamento específico.</p>
 
       <h2>Perguntas frequentes</h2>
       <h3>Falta de vitamina causa cansaço?</h3>

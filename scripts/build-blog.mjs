@@ -119,6 +119,10 @@ const header = `<header class="nav"><div class="nav__in">
 
 const ctaBox = `<div class="cta"><h3>Quer um plano feito só para você?</h3><p>Agende sua consulta — atendimento online e presencial em ${site.cidade}.</p><a class="btn btn--gold" href="${wa}" target="_blank" rel="noopener">Agendar pelo WhatsApp</a></div>`
 
+const materialBox = `<div class="post-cta" style="text-align:center">
+<p><strong>Materiais gratuitos:</strong> baixe guias, cardápios e ferramentas em PDF feitos pelo Dr. Vinícius para você começar hoje.</p>
+<a class="btn btn--gold" href="/#materiais">Ver materiais gratuitos</a></div>`
+
 const authorBox = `<div class="author-box">
 <img src="/foto-hero.jpg" alt="${site.nome}, nutricionista clínico ${site.crn}">
 <div><b>${site.nome}</b><span>Nutricionista Clínico · ${site.crn}</span>
@@ -157,6 +161,7 @@ function artigoHTML(a, idx) {
      <div class="meta">Por <strong>${site.nome}</strong> · ${site.crn} · ${a.data} · ${min} min de leitura</div>
      ${a.img ? `<div class="post__cover"><img src="/${a.img}" alt="${a.titulo}"></div>` : ''}
      ${a.html}
+     ${materialBox}
      ${authorBox}
      ${ctaBox}
      ${related}

@@ -6,6 +6,7 @@ import { artigosOrdenados } from './data/artigos'
 import Nav from './components/Nav'
 import Reveal from './components/Reveal'
 import Faq from './components/Faq'
+import Materiais from './components/Materiais'
 import {
   IconWhats, IconArrow, IconCheck, IconMail, IconInstagram,
   IconApple, IconGut, IconFemale, IconPulse, IconLeaf, IconHeart,
@@ -320,6 +321,9 @@ export default function App() {
             </p>
           </div>
         </section>
+
+        {/* ===================== MATERIAIS GRATUITOS ===================== */}
+        <Materiais />
 
         {/* ===================== DICAS (BLOG) ===================== */}
         <section className="section" id="dicas" style={{ background: 'var(--cream)' }}>
