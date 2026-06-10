@@ -30,4 +30,10 @@ await sharp(SRC.ambiente)
   .jpeg({ quality: 80, mozjpeg: true })
   .toFile(join(pub, 'ambiente.jpg'))
 
+// Banner largo do HERO (foto do Vinícius, tela cheia, será escurecida no CSS)
+await sharp(SRC.hero)
+  .resize(1920, 1180, { fit: 'cover', position: 'top' })
+  .jpeg({ quality: 82, mozjpeg: true })
+  .toFile(join(pub, 'banner-hero.jpg'))
+
 console.log('Fotos geradas: foto-hero.jpg, foto-sobre.jpg, ambiente.jpg')

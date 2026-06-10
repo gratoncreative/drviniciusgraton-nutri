@@ -61,54 +61,40 @@ export default function App() {
       <Nav />
       <main id="topo">
 
-        {/* ===================== HERO ===================== */}
+        {/* ===================== HERO (banner imersivo) ===================== */}
         <section className="hero">
-          <div className="container hero__grid">
-            <div>
-              <Reveal>
-                <span className="hero__badge"><span className="dot" /> Atendimento online e presencial em {site.cidade}</span>
-              </Reveal>
-              <Reveal delay={0.05}>
-                <h1>Sua saúde merece um plano <em>feito só para você</em>.</h1>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <p className="hero__lead">
-                  Nutrição clínica de verdade — sem dieta genérica, sem sofrimento.
-                  Emagrecimento, saúde intestinal, hormônios e disposição com comida real
-                  e acompanhamento de perto.
-                </p>
-              </Reveal>
-              <Reveal delay={0.15}>
-                <div className="hero__actions">
-                  <a className="btn btn--primary" href={whatsappLink()} target="_blank" rel="noopener">
-                    <IconWhats /> Agendar pelo WhatsApp
-                  </a>
-                  <a className="btn btn--ghost" href="#processo">Como funciona <IconArrow /></a>
-                </div>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <div className="hero__trust">
-                  {PROOF.map((p) => (
-                    <div key={p.n}><strong>{p.n}</strong><span>{p.d}</span></div>
-                  ))}
-                </div>
-              </Reveal>
-            </div>
-
-            <Reveal delay={0.1} className="hero__visual">
-              <div className="hero__photo">
-                <img src={`${import.meta.env.BASE_URL}foto-hero.jpg`} alt="Dr. Vinícius Graton, nutricionista clínico, em atendimento" width="880" height="1100" />
+          <div className="hero__bg">
+            <img src={`${import.meta.env.BASE_URL}banner-hero.jpg`} alt="Dr. Vinícius Graton, nutricionista clínico, em seu consultório" />
+          </div>
+          <div className="hero__scrim" />
+          <div className="container hero__content">
+            <Reveal>
+              <span className="hero__badge"><span className="dot" /> Atendimento online e presencial em {site.cidade}</span>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h1>Sua saúde merece um plano <em>feito só para você</em>.</h1>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <p className="hero__lead">
+                Nutrição clínica de verdade — sem dieta genérica, sem sofrimento. Emagrecimento,
+                saúde intestinal, hormônios e disposição com comida real e acompanhamento de perto.
+              </p>
+            </Reveal>
+            <Reveal delay={0.24}>
+              <div className="hero__actions">
+                <a className="btn btn--gold" href="#servicos">Agendar consulta <IconArrow /></a>
+                <a className="btn btn--outline" href={whatsappLink()} target="_blank" rel="noopener"><IconWhats /> Falar no WhatsApp</a>
               </div>
-              <div className="hero__chip hero__chip--1">
-                <IconShield />
-                <div><b>Plano individual</b><span>Feito para a sua rotina</span></div>
-              </div>
-              <div className="hero__chip hero__chip--2">
-                <IconHeart />
-                <div><b>Comida de verdade</b><span>Resultado que se sustenta</span></div>
+            </Reveal>
+            <Reveal delay={0.32}>
+              <div className="hero__trust">
+                {PROOF.map((p) => (
+                  <div key={p.n}><strong>{p.n}</strong><span>{p.d}</span></div>
+                ))}
               </div>
             </Reveal>
           </div>
+          <a href="#para-quem" className="hero__scroll" aria-label="Rolar para ver mais"><span /></a>
         </section>
 
         {/* ===================== FAIXA ===================== */}
@@ -203,6 +189,11 @@ export default function App() {
                 </Reveal>
               ))}
             </div>
+            <Reveal delay={0.1}>
+              <div className="center" style={{ marginTop: 50 }}>
+                <a className="btn btn--primary" href="#servicos">Ver atendimentos e valores <IconArrow /></a>
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -216,24 +207,27 @@ export default function App() {
             <div className="plans">
               <Reveal>
                 <article className="card plan">
-                  <span className="plan__tag">Presencial</span>
-                  <h3>Consulta em Uberlândia</h3>
-                  <p className="plan__desc">Atendimento presencial com avaliação completa e acompanhamento de perto.</p>
+                  <span className="plan__tag">Presencial · Uberlândia</span>
+                  <h3>Consulta presencial</h3>
+                  <div className="plan__price"><span>R$</span>500</div>
+                  <p className="plan__desc">Avaliação completa, presencial, com acompanhamento de perto.</p>
                   <ul className="plan__list">
                     <li><IconCheck /> Anamnese e avaliação detalhada</li>
                     <li><IconCheck /> Plano alimentar individualizado</li>
                     <li><IconCheck /> Orientações práticas para o dia a dia</li>
                     <li><IconCheck /> Retornos de acompanhamento</li>
                   </ul>
-                  <a className="btn btn--ghost" href={whatsappLink('Olá, Dr. Vinícius! Quero agendar uma consulta presencial em Uberlândia.')} target="_blank" rel="noopener">
+                  <a className="btn btn--ghost" href={whatsappLink('Olá, Dr. Vinícius! Quero agendar uma consulta PRESENCIAL em Uberlândia (R$ 500).')} target="_blank" rel="noopener">
                     Agendar presencial <IconArrow />
                   </a>
                 </article>
               </Reveal>
               <Reveal delay={0.08}>
                 <article className="card plan plan--feature">
+                  <span className="plan__badge">Mais procurada</span>
                   <span className="plan__tag">Online · Todo o Brasil</span>
-                  <h3>Consulta Online</h3>
+                  <h3>Consulta online</h3>
+                  <div className="plan__price"><span>R$</span>350</div>
                   <p className="plan__desc">A mesma profundidade do presencial, por vídeo, de onde você estiver.</p>
                   <ul className="plan__list">
                     <li><IconCheck /> Consulta por vídeo, sem deslocamento</li>
@@ -241,8 +235,25 @@ export default function App() {
                     <li><IconCheck /> Suporte para dúvidas entre as consultas</li>
                     <li><IconCheck /> Acompanhamento dos seus resultados</li>
                   </ul>
-                  <a className="btn btn--gold" href={whatsappLink('Olá, Dr. Vinícius! Quero agendar uma consulta online.')} target="_blank" rel="noopener">
+                  <a className="btn btn--gold" href={whatsappLink('Olá, Dr. Vinícius! Quero agendar uma consulta ONLINE (R$ 350).')} target="_blank" rel="noopener">
                     Agendar online <IconArrow />
+                  </a>
+                </article>
+              </Reveal>
+              <Reveal delay={0.16}>
+                <article className="card plan">
+                  <span className="plan__tag">Com plano de saúde</span>
+                  <h3>Tenho plano de saúde</h3>
+                  <div className="plan__price"><span>R$</span>250</div>
+                  <p className="plan__desc">Valor especial para quem tem plano de saúde (atendimento via reembolso).</p>
+                  <ul className="plan__list">
+                    <li><IconCheck /> Online ou presencial em Uberlândia</li>
+                    <li><IconCheck /> Recibo e documentos para reembolso</li>
+                    <li><IconCheck /> Plano alimentar individualizado</li>
+                    <li><IconCheck /> Acompanhamento dos seus resultados</li>
+                  </ul>
+                  <a className="btn btn--ghost" href={whatsappLink('Olá, Dr. Vinícius! Tenho plano de saúde e quero agendar uma consulta (R$ 250).')} target="_blank" rel="noopener">
+                    Agendar <IconArrow />
                   </a>
                 </article>
               </Reveal>
