@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
-import { site, whatsappLink, instagramLink } from './data/site'
+import { site, whatsappLink } from './data/site'
 import Nav from './components/Nav'
 import Reveal from './components/Reveal'
 import Faq from './components/Faq'
@@ -354,7 +354,6 @@ export default function App() {
               <div className="footer__links">
                 <a href={whatsappLink()} target="_blank" rel="noopener">WhatsApp</a>
                 <a href={`mailto:${site.email}`}>{site.email}</a>
-                <a href={instagramLink} target="_blank" rel="noopener">Instagram</a>
               </div>
             </div>
           </div>
