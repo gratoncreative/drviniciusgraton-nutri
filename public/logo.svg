@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 84" role="img" aria-label="Dr. Vinícius Graton — Nutrição Clínica">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#246b4e"/>
+      <stop offset="1" stop-color="#13392c"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(8,10)">
+    <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+    <path d="M32 11 C 20 22, 20 42, 32 53 C 44 42, 44 22, 32 11 Z" fill="#eef7f0"/>
+    <path d="M24.4 21 L32 43.5 L39.6 21" fill="none" stroke="#d8a657" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M32 43.5 L32 50" fill="none" stroke="#1f5c43" stroke-width="3.1" stroke-linecap="round"/>
+  </g>
+  <text x="88" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-weight="600" fill="#16201b">Dr. Vinícius Graton</text>
+  <text x="89" y="62" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="3.2" fill="#2e7d5b">N U T R I Ç Ã O   C L Í N I C A</text>
+</svg>

@@ -9,8 +9,8 @@ export const site = {
   cidade: 'Uberlândia, MG',
   email: 'contato@viniciusgraton.com.br',
 
-  // >>> TROQUE pelo seu número real (formato internacional, só dígitos): 55 + DDD + número
-  whatsapp: '5534999999999',
+  // Número real (formato internacional, só dígitos): 55 + DDD + número
+  whatsapp: '5534991570494',
 
   // >>> TROQUE pelo seu @ do Instagram (sem o @)
   instagram: 'drviniciusgraton',
