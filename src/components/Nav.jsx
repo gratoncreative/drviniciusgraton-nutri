@@ -43,7 +43,6 @@ export default function Nav() {
         </nav>
 
         <div className="nav__cta">
-          <a className="btn btn--ghost" href="#servicos">Atendimentos</a>
           <a className="btn btn--primary" href={whatsappLink()} target="_blank" rel="noopener">
             <IconWhats /> Agendar
           </a>
