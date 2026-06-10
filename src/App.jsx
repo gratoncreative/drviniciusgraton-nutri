@@ -9,8 +9,32 @@ import Faq from './components/Faq'
 import {
   IconWhats, IconArrow, IconCheck, IconMail, IconInstagram,
   IconApple, IconGut, IconFemale, IconPulse, IconLeaf, IconHeart,
-  IconMonitor, IconPin, IconClock, IconChat, IconClipboard, IconShield, IconUser,
+  IconMonitor, IconPin, IconClock, IconChat, IconClipboard, IconShield, IconUser, IconPlus,
 } from './components/Icons'
+
+const PLANS = [
+  {
+    tag: 'Presencial · Uberlândia', nome: 'Consulta presencial', preco: '500', btn: 'ghost', cta: 'Agendar presencial',
+    desc: 'Avaliação completa, presencial, com acompanhamento de perto.',
+    itens: ['Anamnese e avaliação detalhada', 'Plano alimentar individualizado', 'Orientações práticas para o dia a dia', 'Retornos de acompanhamento'],
+    mais: 'A consulta dura cerca de 1h e inclui avaliação antropométrica, análise dos seus exames e da sua rotina. Você sai com um plano alimentar montado para a sua realidade e os próximos passos definidos. Os retornos ajustam o caminho conforme seus resultados.',
+    wa: 'Olá, Dr. Vinícius! Quero agendar uma consulta PRESENCIAL em Uberlândia (R$ 500).',
+  },
+  {
+    tag: 'Online · Todo o Brasil', nome: 'Consulta online', preco: '350', feature: true, badge: 'Mais procurada', btn: 'gold', cta: 'Agendar online',
+    desc: 'A mesma profundidade do presencial, por vídeo, de onde você estiver.',
+    itens: ['Consulta por vídeo, sem deslocamento', 'Plano e materiais enviados digitalmente', 'Suporte para dúvidas entre as consultas', 'Acompanhamento dos seus resultados'],
+    mais: 'Atendimento por vídeo com a mesma avaliação e o mesmo plano do presencial — você recebe tudo digitalmente e conta com suporte entre as consultas. Ideal para quem mora fora de Uberlândia ou tem a rotina corrida.',
+    wa: 'Olá, Dr. Vinícius! Quero agendar uma consulta ONLINE (R$ 350).',
+  },
+  {
+    tag: 'Com plano de saúde', nome: 'Tenho plano de saúde', preco: '250', btn: 'ghost', cta: 'Agendar',
+    desc: 'Valor especial para quem tem plano de saúde (atendimento via reembolso).',
+    itens: ['Online ou presencial em Uberlândia', 'Recibo e documentos para reembolso', 'Plano alimentar individualizado', 'Acompanhamento dos seus resultados'],
+    mais: 'Você paga o valor da consulta e recebe o recibo e a documentação para solicitar reembolso ao seu plano. O valor reembolsado varia conforme o convênio — me chame no WhatsApp que eu te oriento sobre o seu caso.',
+    wa: 'Olá, Dr. Vinícius! Tenho plano de saúde e quero agendar uma consulta (R$ 250).',
+  },
+]
 
 const PAINS = [
   { icon: IconApple, img: 'pq-emagrecimento.jpg', t: 'Emagrecimento', d: 'Perder peso de forma sustentável, sem dietas malucas nem efeito sanfona.',
@@ -48,6 +72,7 @@ const QUOTES = [
 
 export default function App() {
   const [openPain, setOpenPain] = useState(-1)
+  const [openPlan, setOpenPlan] = useState(-1)
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.1, smoothWheel: true })
     let raf
@@ -199,58 +224,49 @@ export default function App() {
               <Reveal delay={0.05}><h2 className="section-title">Escolha o formato que combina com você</h2></Reveal>
             </div>
             <div className="plans">
-              <Reveal>
-                <article className="card plan">
-                  <span className="plan__tag">Presencial · Uberlândia</span>
-                  <h3>Consulta presencial</h3>
-                  <div className="plan__price"><span>R$</span>500</div>
-                  <p className="plan__desc">Avaliação completa, presencial, com acompanhamento de perto.</p>
-                  <ul className="plan__list">
-                    <li><IconCheck /> Anamnese e avaliação detalhada</li>
-                    <li><IconCheck /> Plano alimentar individualizado</li>
-                    <li><IconCheck /> Orientações práticas para o dia a dia</li>
-                    <li><IconCheck /> Retornos de acompanhamento</li>
-                  </ul>
-                  <a className="btn btn--ghost" href={whatsappLink('Olá, Dr. Vinícius! Quero agendar uma consulta PRESENCIAL em Uberlândia (R$ 500).')} target="_blank" rel="noopener">
-                    Agendar presencial <IconArrow />
-                  </a>
-                </article>
-              </Reveal>
-              <Reveal delay={0.08}>
-                <article className="card plan plan--feature">
-                  <span className="plan__badge">Mais procurada</span>
-                  <span className="plan__tag">Online · Todo o Brasil</span>
-                  <h3>Consulta online</h3>
-                  <div className="plan__price"><span>R$</span>350</div>
-                  <p className="plan__desc">A mesma profundidade do presencial, por vídeo, de onde você estiver.</p>
-                  <ul className="plan__list">
-                    <li><IconCheck /> Consulta por vídeo, sem deslocamento</li>
-                    <li><IconCheck /> Plano e materiais enviados digitalmente</li>
-                    <li><IconCheck /> Suporte para dúvidas entre as consultas</li>
-                    <li><IconCheck /> Acompanhamento dos seus resultados</li>
-                  </ul>
-                  <a className="btn btn--gold" href={whatsappLink('Olá, Dr. Vinícius! Quero agendar uma consulta ONLINE (R$ 350).')} target="_blank" rel="noopener">
-                    Agendar online <IconArrow />
-                  </a>
-                </article>
-              </Reveal>
-              <Reveal delay={0.16}>
-                <article className="card plan">
-                  <span className="plan__tag">Com plano de saúde</span>
-                  <h3>Tenho plano de saúde</h3>
-                  <div className="plan__price"><span>R$</span>250</div>
-                  <p className="plan__desc">Valor especial para quem tem plano de saúde (atendimento via reembolso).</p>
-                  <ul className="plan__list">
-                    <li><IconCheck /> Online ou presencial em Uberlândia</li>
-                    <li><IconCheck /> Recibo e documentos para reembolso</li>
-                    <li><IconCheck /> Plano alimentar individualizado</li>
-                    <li><IconCheck /> Acompanhamento dos seus resultados</li>
-                  </ul>
-                  <a className="btn btn--ghost" href={whatsappLink('Olá, Dr. Vinícius! Tenho plano de saúde e quero agendar uma consulta (R$ 250).')} target="_blank" rel="noopener">
-                    Agendar <IconArrow />
-                  </a>
-                </article>
-              </Reveal>
+              {PLANS.map((p, i) => {
+                const open = openPlan === i
+                return (
+                  <Reveal key={p.nome} delay={i * 0.08}>
+                    <article
+                      className={`card plan ${p.feature ? 'plan--feature' : ''} ${open ? 'plan--open' : ''}`}
+                      onClick={() => setOpenPlan(open ? -1 : i)}
+                    >
+                      {p.badge && <span className="plan__badge">{p.badge}</span>}
+                      <span className="plan__tag">{p.tag}</span>
+                      <h3>{p.nome}</h3>
+                      <div className="plan__price"><span>R$</span>{p.preco}</div>
+                      <p className="plan__desc">{p.desc}</p>
+                      <ul className="plan__list">
+                        {p.itens.map((it) => <li key={it}><IconCheck /> {it}</li>)}
+                      </ul>
+                      <span className="plan__expand">{open ? 'Ver menos' : 'Ver detalhes'} <IconPlus /></span>
+                      <AnimatePresence initial={false}>
+                        {open && (
+                          <motion.div
+                            className="plan__more"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          >
+                            <p>{p.mais}</p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                      <a
+                        className={`btn ${p.btn === 'gold' ? 'btn--gold' : 'btn--ghost'}`}
+                        href={whatsappLink(p.wa)}
+                        target="_blank"
+                        rel="noopener"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {p.cta} <IconArrow />
+                      </a>
+                    </article>
+                  </Reveal>
+                )
+              })}
             </div>
 
             <div className="benefits">
