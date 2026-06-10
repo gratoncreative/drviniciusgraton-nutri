@@ -3,7 +3,6 @@ import { site, whatsappLink } from '../data/site'
 import { IconMenu, IconClose, IconWhats } from './Icons'
 
 const LINKS = [
-  ['Quem sou', '#sobre'],
   ['Para quem é', '#para-quem'],
   ['Como funciona', '#processo'],
   ['Atendimentos', '#servicos'],

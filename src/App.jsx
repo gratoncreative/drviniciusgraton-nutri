@@ -164,43 +164,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* ===================== QUEM SOU ===================== */}
-        <section className="section about" id="sobre">
-          <div className="container about__grid">
-            <Reveal className="about__photo">
-              <img src={`${import.meta.env.BASE_URL}foto-hero.jpg`} alt="Dr. Vinícius Graton, nutricionista clínico" width="880" height="1100" />
-            </Reveal>
-            <div>
-              <Reveal><span className="eyebrow">Quem sou</span></Reveal>
-              <Reveal delay={0.05}><h2 className="section-title">Dr. Vinícius Graton, nutricionista clínico</h2></Reveal>
-              <Reveal delay={0.1}>
-                <p>
-                  Acredito que nutrição não é sobre proibir — é sobre construir, junto com você,
-                  um jeito de comer que faça sentido para a sua vida, o seu corpo e a sua rotina.
-                </p>
-              </Reveal>
-              <Reveal delay={0.15}>
-                <p>
-                  Cada plano que entrego é individualizado: parte do seu histórico, dos seus exames
-                  e dos seus objetivos reais. Nada de fórmula pronta. O foco é resultado que se sustenta
-                  e uma relação leve e saudável com a comida.
-                </p>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <div className="about__creds">
-                  <span className="about__cred"><IconShield /> {site.crn}</span>
-                  <span className="about__cred"><IconClipboard /> Nutrição clínica individualizada</span>
-                  <span className="about__cred"><IconPin /> {site.cidade} + Online</span>
-                </div>
-              </Reveal>
-              <Reveal delay={0.25}>
-                <div className="hero__actions">
-                  <a className="btn btn--primary" href={whatsappLink()} target="_blank" rel="noopener"><IconWhats /> Falar comigo</a>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
 
         {/* ===================== PROCESSO ===================== */}
         <section className="section" id="processo">
@@ -290,20 +253,24 @@ export default function App() {
               </Reveal>
             </div>
 
-            <div className="grid-3" style={{ marginTop: 24 }}>
+            <div className="benefits">
               {[
                 { icon: IconMonitor, t: 'Sem deslocamento', d: 'Atendimento online com a mesma qualidade.' },
                 { icon: IconClock, t: 'Horário flexível', d: 'Agendamos no melhor momento para você.' },
                 { icon: IconChat, t: 'Suporte próximo', d: 'Você não fica sozinho entre as consultas.' },
+                { icon: IconClipboard, t: 'Plano individualizado', d: 'Feito a partir do seu histórico e objetivos.' },
+                { icon: IconLeaf, t: 'Sem dietas restritivas', d: 'Comida de verdade, sem sofrimento.' },
+                { icon: IconPulse, t: 'Resultados acompanhados', d: 'Ajustes ao longo do processo, com você.' },
+                { icon: IconShield, t: 'Profissional registrado', d: `${site.crn} — nutrição clínica.` },
+                { icon: IconHeart, t: 'Atendimento humano', d: 'Escuta de verdade, sem pressa.' },
               ].map((b, i) => {
                 const Icon = b.icon
                 return (
-                  <Reveal key={b.t} delay={i * 0.06}>
-                    <article className="card pain">
-                      <div className="pain__icon"><Icon /></div>
-                      <h3>{b.t}</h3>
-                      <p>{b.d}</p>
-                    </article>
+                  <Reveal key={b.t} delay={i * 0.04}>
+                    <div className="benefit">
+                      <span className="benefit__ic"><Icon /></span>
+                      <div><b>{b.t}</b><span>{b.d}</span></div>
+                    </div>
                   </Reveal>
                 )
               })}
@@ -407,7 +374,6 @@ export default function App() {
             <div>
               <h4>Navegação</h4>
               <div className="footer__links">
-                <a href="#sobre">Quem sou</a>
                 <a href="#para-quem">Para quem é</a>
                 <a href="#processo">Como funciona</a>
                 <a href="#servicos">Atendimentos</a>
