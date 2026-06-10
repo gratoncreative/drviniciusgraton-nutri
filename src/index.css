@@ -149,6 +149,7 @@ h1, h2, h3, h4 {
 .nav__links a:hover { color: var(--green-700); }
 .nav__cta { display: flex; align-items: center; gap: 14px; }
 .nav__toggle { display: none; }
+.nav__menu { display: none; } /* menu mobile fica oculto no desktop; o media query abaixo o exibe */
 
 @media (max-width: 920px) {
   .nav__links { display: none; }
