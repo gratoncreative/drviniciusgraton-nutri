@@ -30,9 +30,10 @@ await sharp(SRC.ambiente)
   .jpeg({ quality: 80, mozjpeg: true })
   .toFile(join(pub, 'ambiente.jpg'))
 
-// Banner largo do HERO = foto panorâmica. Fonte é baixa-res (1600x533), então
-// mantemos praticamente a resolução nativa (sem ampliar) = máxima nitidez.
+// Banner largo do HERO = foto panorâmica. Reenquadrada (corta um pouco da
+// esquerda) para deslocar o Vinícius mais ao centro-esquerda. Fonte baixa-res.
 await sharp(SRC.ambiente)
+  .extract({ left: 400, top: 0, width: 1200, height: 533 })
   .resize(1600, 540, { fit: 'cover', position: 'centre' })
   .sharpen({ sigma: 0.8 })
   .jpeg({ quality: 90, mozjpeg: true })
