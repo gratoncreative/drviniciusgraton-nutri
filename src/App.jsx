@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 import { site, whatsappLink } from './data/site'
+import { artigosOrdenados } from './data/artigos'
 import Nav from './components/Nav'
 import Reveal from './components/Reveal'
 import Faq from './components/Faq'
@@ -300,6 +301,31 @@ export default function App() {
           </div>
         </section>
 
+        {/* ===================== DICAS (BLOG) ===================== */}
+        <section className="section" id="dicas" style={{ background: 'var(--cream)' }}>
+          <div className="container">
+            <div className="center">
+              <Reveal><span className="eyebrow">Dicas de Saúde</span></Reveal>
+              <Reveal delay={0.05}><h2 className="section-title">Conteúdo para você cuidar da sua saúde</h2></Reveal>
+            </div>
+            <div className="grid-3">
+              {artigosOrdenados.slice(0, 3).map((a, i) => (
+                <Reveal key={a.slug} delay={i * 0.05}>
+                  <a className="card pain" href={`/dicas/${a.slug}/`} style={{ display: 'block', height: '100%' }}>
+                    <span className="eyebrow" style={{ marginBottom: 10 }}>{a.categoria}</span>
+                    <h3>{a.titulo}</h3>
+                    <p>{a.descricao}</p>
+                    <span style={{ marginTop: 16, display: 'inline-block', fontWeight: 600, color: 'var(--green-700)' }}>Ler artigo →</span>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+            <div className="center" style={{ marginTop: 32 }}>
+              <a className="btn btn--ghost" href="/dicas/">Ver todas as dicas</a>
+            </div>
+          </div>
+        </section>
+
         {/* ===================== FAQ ===================== */}
         <section className="section" id="faq">
           <div className="container">
@@ -348,6 +374,7 @@ export default function App() {
                 <a href="#para-quem">Para quem é</a>
                 <a href="#processo">Como funciona</a>
                 <a href="#servicos">Atendimentos</a>
+                <a href="/dicas/">Dicas de Saúde</a>
                 <a href="#faq">Dúvidas</a>
               </div>
             </div>

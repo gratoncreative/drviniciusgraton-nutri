@@ -6,7 +6,7 @@
   "description": "Site Dr. Vinicius Graton - Nutricionista Clinico (Uberlandia + Online)",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/build-blog.mjs",
     "preview": "vite preview --host"
   },
   "dependencies": {

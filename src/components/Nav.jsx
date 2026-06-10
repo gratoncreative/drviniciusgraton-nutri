@@ -7,6 +7,7 @@ const LINKS = [
   ['Para quem é', '#para-quem'],
   ['Como funciona', '#processo'],
   ['Atendimentos', '#servicos'],
+  ['Dicas de Saúde', '/dicas/'],
   ['Dúvidas', '#faq'],
 ]
 
