@@ -30,10 +30,12 @@ await sharp(SRC.ambiente)
   .jpeg({ quality: 80, mozjpeg: true })
   .toFile(join(pub, 'ambiente.jpg'))
 
-// Banner largo do HERO = foto panorâmica do consultório (escurecida no CSS)
+// Banner largo do HERO = foto panorâmica. Fonte é baixa-res (1600x533), então
+// mantemos praticamente a resolução nativa (sem ampliar) = máxima nitidez.
 await sharp(SRC.ambiente)
-  .resize(1800, 1000, { fit: 'cover', position: 'centre' })
-  .jpeg({ quality: 84, mozjpeg: true })
+  .resize(1600, 540, { fit: 'cover', position: 'centre' })
+  .sharpen({ sigma: 0.8 })
+  .jpeg({ quality: 90, mozjpeg: true })
   .toFile(join(pub, 'banner-hero.jpg'))
 
 console.log('Fotos geradas: foto-hero.jpg, foto-sobre.jpg, ambiente.jpg')
