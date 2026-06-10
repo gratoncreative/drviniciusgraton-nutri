@@ -154,8 +154,15 @@ h1, h2, h3, h4 {
 .nav__mark { width: 42px; height: 42px; border-radius: 12px; flex: none; display: block; }
 .nav__brand small { display: block; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--green-600); }
 .nav__links { display: flex; align-items: center; gap: 30px; }
-.nav__links a { font-size: 15px; font-weight: 500; color: var(--body); transition: color .2s; }
+.nav__links a { position: relative; font-size: 15px; font-weight: 500; color: var(--body); transition: color .25s; padding-bottom: 4px; }
+.nav__links a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 2px;
+  background: var(--gold-500); transform: scaleX(0); transform-origin: right;
+  transition: transform .32s cubic-bezier(.65,0,.35,1);
+}
 .nav__links a:hover { color: var(--green-700); }
+.nav__links a:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav:not(.nav--scrolled) .nav__links a:hover { color: #fff; }
 .nav__cta { display: flex; align-items: center; gap: 14px; }
 .nav__toggle { display: none; }
 .nav__menu { display: none; } /* menu mobile fica oculto no desktop; o media query abaixo o exibe */
@@ -243,6 +250,24 @@ h1, h2, h3, h4 {
 .pain h3 { font-size: 21px; margin-bottom: 8px; }
 .pain p { font-size: 15.5px; color: var(--muted); }
 
+/* Para quem é — cards com foto + clique para expandir */
+.pain-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); cursor: pointer; display: flex; flex-direction: column; transition: transform .3s ease, box-shadow .3s ease; outline: none; }
+.pain-card:hover, .pain-card:focus-visible { transform: translateY(-5px); box-shadow: var(--shadow); }
+.pain-card__media { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--green-100); }
+.pain-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.pain-card:hover .pain-card__media img { transform: scale(1.07); }
+.pain-card__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(14,36,28,.4)); }
+.pain-card__chip { position: absolute; left: 16px; bottom: 16px; z-index: 1; width: 46px; height: 46px; border-radius: 13px; background: rgba(255,255,255,.94); display: grid; place-items: center; color: var(--green-700); box-shadow: var(--shadow-sm); }
+.pain-card__chip svg { width: 24px; height: 24px; }
+.pain-card__body { padding: 24px 26px 26px; }
+.pain-card__body h3 { font-size: 21px; margin-bottom: 8px; }
+.pain-card__body > p { font-size: 15.5px; color: var(--muted); }
+.pain-card__more { overflow: hidden; }
+.pain-card__more p { font-size: 15px; color: var(--body); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.pain-card__toggle { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--green-700); }
+.pain-card__toggle svg { width: 16px; height: 16px; transition: transform .3s ease; }
+.pain-card--open .pain-card__toggle svg { transform: rotate(90deg); }
+
 /* ============================================================
    SOBRE
    ============================================================ */
@@ -284,7 +309,13 @@ h1, h2, h3, h4 {
    PROCESSO
    ============================================================ */
 .steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 56px; }
-.steps::before { content: ''; position: absolute; top: 39px; left: 13%; right: 13%; height: 2px; background: linear-gradient(90deg, transparent, var(--green-100) 12%, var(--green-100) 88%, transparent); z-index: 0; }
+.steps::before {
+  content: ''; position: absolute; top: 38px; left: 13%; right: 13%; height: 3px; z-index: 0; border-radius: 3px;
+  background: linear-gradient(90deg, rgba(46,125,91,.2), var(--green-500) 25%, var(--gold-500) 50%, var(--green-500) 75%, rgba(46,125,91,.2));
+  background-size: 250% 100%;
+  animation: stepFlow 5s linear infinite;
+}
+@keyframes stepFlow { to { background-position: -250% 0; } }
 .step { position: relative; z-index: 1; padding-top: 16px; }
 .step__num {
   position: relative; z-index: 1;
