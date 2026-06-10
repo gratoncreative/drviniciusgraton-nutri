@@ -273,6 +273,9 @@ h1, h2, h3, h4 {
 .about__creds { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .about__cred { display: inline-flex; align-items: center; gap: 9px; background: #fff; border: 1px solid var(--line); border-radius: 100px; padding: 9px 16px; font-size: 14px; font-weight: 500; color: var(--green-800); }
 .about__cred svg { width: 17px; height: 17px; color: var(--green-600); }
+.about__intro { max-width: 760px; margin: 0 auto; padding: clamp(44px,6vw,80px) 24px clamp(56px,8vw,108px); text-align: center; }
+.about__intro p { margin: 16px auto 0; font-size: 17px; max-width: 60ch; color: var(--body); }
+.about__intro .about__creds, .about__intro .hero__actions { justify-content: center; margin-top: 24px; }
 @media (max-width: 880px) { .about__grid { grid-template-columns: 1fr; gap: 36px; } .about__photo { max-width: 380px; } }
 
 /* ============================================================

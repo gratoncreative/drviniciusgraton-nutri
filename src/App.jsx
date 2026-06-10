@@ -144,49 +144,44 @@ export default function App() {
           </div>
         </section>
 
-        {/* ===================== SOBRE ===================== */}
-        <section className="section about" id="sobre">
-          <div className="container about__grid">
-            <Reveal className="about__photo">
-              <img src={`${import.meta.env.BASE_URL}foto-sobre.jpg`} alt="Dr. Vinícius Graton, nutricionista clínico" width="880" height="1100" />
-            </Reveal>
-            <div>
-              <Reveal><span className="eyebrow">Quem sou</span></Reveal>
-              <Reveal delay={0.05}><h2 className="section-title">Dr. Vinícius Graton, nutricionista clínico</h2></Reveal>
-              <Reveal delay={0.1}>
-                <p>
-                  Acredito que nutrição não é sobre proibir — é sobre construir, junto com você,
-                  um jeito de comer que faça sentido para a sua vida, o seu corpo e a sua rotina.
-                </p>
-              </Reveal>
-              <Reveal delay={0.15}>
-                <p>
-                  Cada plano que entrego é individualizado: parte do seu histórico, dos seus exames
-                  e dos seus objetivos reais. Nada de fórmula pronta. O foco é resultado que se sustenta
-                  e uma relação leve e saudável com a comida.
-                </p>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <div className="about__creds">
-                  <span className="about__cred"><IconShield /> {site.crn}</span>
-                  <span className="about__cred"><IconClipboard /> Nutrição clínica individualizada</span>
-                  <span className="about__cred"><IconPin /> {site.cidade} + Online</span>
-                </div>
-              </Reveal>
-              <Reveal delay={0.25}>
-                <div className="hero__actions">
-                  <a className="btn btn--primary" href={whatsappLink()} target="_blank" rel="noopener"><IconWhats /> Falar comigo</a>
-                </div>
-              </Reveal>
+        {/* ===================== QUEM SOU + AMBIENTE ===================== */}
+        <section className="about" id="sobre">
+          <div className="ambiente" aria-label="Consultório">
+            <img src={`${import.meta.env.BASE_URL}ambiente.jpg`} alt="Consultório do Dr. Vinícius Graton em Uberlândia" loading="lazy" />
+            <div className="ambiente__cap">
+              <span>Um ambiente acolhedor para cuidar de você — presencial em Uberlândia e online para todo o Brasil.</span>
             </div>
           </div>
-        </section>
-
-        {/* ===================== AMBIENTE ===================== */}
-        <section className="ambiente" aria-label="Consultório">
-          <img src={`${import.meta.env.BASE_URL}ambiente.jpg`} alt="Consultório do Dr. Vinícius Graton em Uberlândia" loading="lazy" />
-          <div className="ambiente__cap">
-            <span>Um ambiente acolhedor para cuidar de você — presencial em Uberlândia e online para todo o Brasil.</span>
+          <div className="about__intro">
+            <div className="center">
+              <Reveal><span className="eyebrow">Quem sou</span></Reveal>
+              <Reveal delay={0.05}><h2 className="section-title">Dr. Vinícius Graton, nutricionista clínico</h2></Reveal>
+            </div>
+            <Reveal delay={0.1}>
+              <p>
+                Acredito que nutrição não é sobre proibir — é sobre construir, junto com você,
+                um jeito de comer que faça sentido para a sua vida, o seu corpo e a sua rotina.
+              </p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <p>
+                Cada plano que entrego é individualizado: parte do seu histórico, dos seus exames
+                e dos seus objetivos reais. Nada de fórmula pronta. O foco é resultado que se sustenta
+                e uma relação leve e saudável com a comida.
+              </p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <div className="about__creds">
+                <span className="about__cred"><IconShield /> {site.crn}</span>
+                <span className="about__cred"><IconClipboard /> Nutrição clínica individualizada</span>
+                <span className="about__cred"><IconPin /> {site.cidade} + Online</span>
+              </div>
+            </Reveal>
+            <Reveal delay={0.25}>
+              <div className="hero__actions">
+                <a className="btn btn--primary" href={whatsappLink()} target="_blank" rel="noopener"><IconWhats /> Falar comigo</a>
+              </div>
+            </Reveal>
           </div>
         </section>
 
