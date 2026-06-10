@@ -48,6 +48,16 @@ h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.15;font-weight:6
 .post li{position:relative;padding-left:26px;margin-bottom:10px}
 .post li::before{content:'';position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
 .post strong{color:var(--ink)}
+.post a{color:var(--green-700);text-decoration:underline;text-underline-offset:2px}
+.post a:hover{color:var(--green-900)}
+.post-cta{background:var(--green-50);border:1px solid var(--green-100);border-radius:16px;padding:22px 24px;margin:30px 0}
+.post-cta p{margin:0 0 14px;font-size:16px;color:var(--ink)}
+.author-box{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;margin:42px 0 6px}
+.author-box img{width:74px;height:74px;border-radius:16px;object-fit:cover;flex:none}
+.author-box b{font-family:var(--head);font-size:18px;color:var(--ink);display:block}
+.author-box>div>span{font-size:13.5px;color:var(--green-700);font-weight:700;display:block;margin:2px 0 8px}
+.author-box p{font-size:14.5px;color:var(--muted);margin:0 0 4px;max-width:60ch}
+@media(max-width:540px){.author-box{flex-direction:column}}
 /* cta */
 .cta{background:linear-gradient(150deg,var(--green-700),var(--green-900));color:#fff;border-radius:22px;padding:38px 30px;text-align:center;margin:46px 0}
 .cta h3{color:#fff;font-size:26px;margin-bottom:10px}
@@ -109,6 +119,12 @@ const header = `<header class="nav"><div class="nav__in">
 
 const ctaBox = `<div class="cta"><h3>Quer um plano feito só para você?</h3><p>Agende sua consulta — atendimento online e presencial em ${site.cidade}.</p><a class="btn btn--gold" href="${wa}" target="_blank" rel="noopener">Agendar pelo WhatsApp</a></div>`
 
+const authorBox = `<div class="author-box">
+<img src="/foto-hero.jpg" alt="${site.nome}, nutricionista clínico ${site.crn}">
+<div><b>${site.nome}</b><span>Nutricionista Clínico · ${site.crn}</span>
+<p>Nutrição clínica individualizada — emagrecimento, saúde intestinal, hormônios e performance. Atende em ${site.cidade} e online para todo o Brasil.</p>
+<a class="btn btn--gold" href="${wa}" target="_blank" rel="noopener" style="margin-top:6px">Agendar consulta</a></div></div>`
+
 const ano = new Date().getFullYear()
 const footerFinal = `<footer class="footer"><div class="container wrap">
 <div class="brand"><img src="/logo-mark.svg" alt="" style="width:36px;height:36px;border-radius:10px"> Dr. Vinícius Graton</div>
@@ -126,9 +142,10 @@ function artigoHTML(a, idx) {
   const jsonld = {
     '@context': 'https://schema.org', '@type': 'Article',
     headline: a.titulo, description: a.descricao, datePublished: a.dataISO,
-    author: { '@type': 'Person', name: site.nome },
-    publisher: { '@type': 'Organization', name: 'Dr. Vinícius Graton' },
-    mainEntityOfPage: url, image: `${ORIGIN}/${a.img || 'og.jpg'}`,
+    author: { '@type': 'Person', name: site.nome, jobTitle: 'Nutricionista Clínico', identifier: site.crn, url: ORIGIN },
+    publisher: { '@type': 'Organization', name: 'Dr. Vinícius Graton', logo: { '@type': 'ImageObject', url: `${ORIGIN}/logo-mark.svg` } },
+    mainEntityOfPage: url, image: `${ORIGIN}/${a.img || 'og.jpg'}`, inLanguage: 'pt-BR',
+    about: { '@type': 'MedicalCondition', name: a.categoria },
   }
   const outros = artigosOrdenados.filter((x) => x.slug !== a.slug).slice(0, 3)
   const related = outros.length
@@ -137,9 +154,10 @@ function artigoHTML(a, idx) {
   return head(`${a.titulo} | Dr. Vinícius Graton`, a.descricao, url, jsonld, a.img) + header +
     `<main class="container"><div class="crumb"><a href="/">Início</a> › <a href="/dicas/">Dicas</a> › ${a.categoria}</div>
      <article class="post"><span class="eyebrow">${a.categoria}</span><h1>${a.titulo}</h1>
-     <div class="meta">${a.data} · ${min} min de leitura</div>
+     <div class="meta">Por <strong>${site.nome}</strong> · ${site.crn} · ${a.data} · ${min} min de leitura</div>
      ${a.img ? `<div class="post__cover"><img src="/${a.img}" alt="${a.titulo}"></div>` : ''}
      ${a.html}
+     ${authorBox}
      ${ctaBox}
      ${related}
      </article></main>` + footerFinal
