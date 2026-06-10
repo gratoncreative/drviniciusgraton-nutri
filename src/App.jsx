@@ -335,7 +335,7 @@ export default function App() {
         <div className="container">
           <div className="footer__grid">
             <div>
-              <div className="footer__brand"><img className="nav__mark" src="/logo-mark.svg" alt="" width="42" height="42" /> Dr. Vinícius Graton</div>
+              <div className="footer__brand"><img className="nav__mark" src={`${import.meta.env.BASE_URL}logo-mark.svg`} alt="" width="42" height="42" /> Dr. Vinícius Graton</div>
               <p>Nutrição clínica individualizada — emagrecimento, saúde intestinal, hormônios e performance. Atendimento em {site.cidade} e online para todo o Brasil.</p>
               <p style={{ marginTop: 14, fontSize: 14 }}>{site.crn}</p>
             </div>

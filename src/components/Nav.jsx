@@ -29,7 +29,7 @@ export default function Nav() {
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
         <a href="#topo" className="nav__brand" aria-label="Início">
-          <img className="nav__mark" src="/logo-mark.svg" alt="" width="42" height="42" />
+          <img className="nav__mark" src={`${import.meta.env.BASE_URL}logo-mark.svg`} alt="" width="42" height="42" />
           <span>
             Dr. Vinícius Graton
             <small>{site.profissao}</small>
