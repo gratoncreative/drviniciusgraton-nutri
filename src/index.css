@@ -208,6 +208,7 @@ h1, h2, h3, h4 {
   aspect-ratio: 4/5; background: linear-gradient(160deg, var(--green-600), var(--green-800));
   box-shadow: var(--shadow-lg);
 }
+.hero__photo img, .about__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero__photo .placeholder {
   position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
   color: rgba(255,255,255,.85); font-size: 14px; padding: 24px;
@@ -273,6 +274,22 @@ h1, h2, h3, h4 {
 .about__cred { display: inline-flex; align-items: center; gap: 9px; background: #fff; border: 1px solid var(--line); border-radius: 100px; padding: 9px 16px; font-size: 14px; font-weight: 500; color: var(--green-800); }
 .about__cred svg { width: 17px; height: 17px; color: var(--green-600); }
 @media (max-width: 880px) { .about__grid { grid-template-columns: 1fr; gap: 36px; } .about__photo { max-width: 380px; } }
+
+/* ============================================================
+   AMBIENTE (faixa full-width)
+   ============================================================ */
+.ambiente { position: relative; width: 100%; height: clamp(230px, 34vw, 460px); overflow: hidden; }
+.ambiente img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ambiente__cap {
+  position: absolute; inset: 0; display: flex; align-items: flex-end;
+  padding: clamp(22px, 4vw, 52px);
+  background: linear-gradient(to top, rgba(14,36,28,.78), rgba(14,36,28,.12) 55%, rgba(14,36,28,0) 80%);
+}
+.ambiente__cap span {
+  color: #fff; font-family: var(--font-head); font-weight: 500;
+  font-size: clamp(19px, 2.6vw, 32px); line-height: 1.18; max-width: 22ch;
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
+}
 
 /* ============================================================
    PROCESSO

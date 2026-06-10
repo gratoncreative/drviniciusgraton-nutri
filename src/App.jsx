@@ -96,10 +96,7 @@ export default function App() {
 
             <Reveal delay={0.1} className="hero__visual">
               <div className="hero__photo">
-                <div className="placeholder">
-                  <IconUser />
-                  Sua foto profissional entra aqui<br />(troque em /public)
-                </div>
+                <img src={`${import.meta.env.BASE_URL}foto-hero.jpg`} alt="Dr. Vinícius Graton, nutricionista clínico, em atendimento" width="880" height="1100" />
               </div>
               <div className="hero__chip hero__chip--1">
                 <IconShield />
@@ -150,10 +147,7 @@ export default function App() {
         <section className="section about" id="sobre">
           <div className="container about__grid">
             <Reveal className="about__photo">
-              <div className="placeholder">
-                <IconUser />
-                Foto do Dr. Vinícius<br />(troque em /public)
-              </div>
+              <img src={`${import.meta.env.BASE_URL}foto-sobre.jpg`} alt="Dr. Vinícius Graton, nutricionista clínico" width="880" height="1100" />
             </Reveal>
             <div>
               <Reveal><span className="eyebrow">Quem sou</span></Reveal>
@@ -184,6 +178,14 @@ export default function App() {
                 </div>
               </Reveal>
             </div>
+          </div>
+        </section>
+
+        {/* ===================== AMBIENTE ===================== */}
+        <section className="ambiente" aria-label="Consultório">
+          <img src={`${import.meta.env.BASE_URL}ambiente.jpg`} alt="Consultório do Dr. Vinícius Graton em Uberlândia" loading="lazy" />
+          <div className="ambiente__cap">
+            <span>Um ambiente acolhedor para cuidar de você — presencial em Uberlândia e online para todo o Brasil.</span>
           </div>
         </section>
 
