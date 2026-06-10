@@ -25,7 +25,7 @@ jobs:
       - run: npm install
       - run: npm run build
         env:
-          VITE_BASE: /drviniciusgraton-nutri/
+          VITE_BASE: /
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
