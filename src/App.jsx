@@ -8,12 +8,12 @@ import Reveal from './components/Reveal'
 import Faq from './components/Faq'
 import {
   IconWhats, IconArrow, IconCheck, IconMail, IconInstagram,
-  IconScale, IconGut, IconFemale, IconPulse, IconLeaf, IconHeart,
+  IconApple, IconGut, IconFemale, IconPulse, IconLeaf, IconHeart,
   IconMonitor, IconPin, IconClock, IconChat, IconClipboard, IconShield, IconUser,
 } from './components/Icons'
 
 const PAINS = [
-  { icon: IconScale, img: 'pq-emagrecimento.jpg', t: 'Emagrecimento', d: 'Perder peso de forma sustentável, sem dietas malucas nem efeito sanfona.',
+  { icon: IconApple, img: 'pq-emagrecimento.jpg', t: 'Emagrecimento', d: 'Perder peso de forma sustentável, sem dietas malucas nem efeito sanfona.',
     mais: 'Ajustamos calorias, proteína e rotina ao seu corpo. Sem passar fome e sem efeito sanfona — peso que desce e, principalmente, se mantém.' },
   { icon: IconGut, img: 'pq-intestino.jpg', t: 'Saúde intestinal', d: 'Inchaço, intestino preso, gases e desconforto — tratados pela raiz.',
     mais: 'Investigamos a causa (alimentação, flora intestinal, intolerâncias) e montamos um plano que regula o intestino e acaba com o inchaço.' },
@@ -315,11 +315,16 @@ export default function App() {
             <div className="grid-3">
               {artigosOrdenados.slice(0, 3).map((a, i) => (
                 <Reveal key={a.slug} delay={i * 0.05}>
-                  <a className="card pain" href={`/dicas/${a.slug}/`} style={{ display: 'block', height: '100%' }}>
-                    <span className="eyebrow" style={{ marginBottom: 10 }}>{a.categoria}</span>
-                    <h3>{a.titulo}</h3>
-                    <p>{a.descricao}</p>
-                    <span style={{ marginTop: 16, display: 'inline-block', fontWeight: 600, color: 'var(--green-700)' }}>Ler artigo →</span>
+                  <a className="pain-card" href={`/dicas/${a.slug}/`}>
+                    <div className="pain-card__media">
+                      <img src={`${import.meta.env.BASE_URL}${a.img}`} alt={a.titulo} loading="lazy" />
+                    </div>
+                    <div className="pain-card__body">
+                      <span className="eyebrow" style={{ marginBottom: 8, display: 'inline-block' }}>{a.categoria}</span>
+                      <h3>{a.titulo}</h3>
+                      <p>{a.descricao}</p>
+                      <span className="pain-card__toggle">Ler artigo →</span>
+                    </div>
                   </a>
                 </Reveal>
               ))}

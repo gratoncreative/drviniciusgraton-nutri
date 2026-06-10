@@ -58,7 +58,13 @@ h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.15;font-weight:6
 .hero-blog p{color:var(--muted);font-size:19px;margin-top:14px;max-width:54ch}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding:36px 0 60px}
 @media(max-width:680px){.grid{grid-template-columns:1fr}}
-.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 2px 10px rgba(14,36,28,.06);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 2px 10px rgba(14,36,28,.06);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.card__cover{aspect-ratio:16/9;overflow:hidden}
+.card__cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .card__cover img{transform:scale(1.06)}
+.card__body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.post__cover{border-radius:18px;overflow:hidden;margin:8px 0 28px;aspect-ratio:16/9}
+.post__cover img{width:100%;height:100%;object-fit:cover;display:block}
 .card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(14,36,28,.12)}
 .card .eyebrow{margin-top:0}
 .card h2{font-size:22px;margin-bottom:10px}
@@ -79,7 +85,7 @@ h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.15;font-weight:6
 
 const WHATS_SVG = `<svg viewBox="0 0 24 24"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01ZM12.05 20.15a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>`
 
-const head = (titulo, descricao, canonical, jsonld) => `<!doctype html><html lang="pt-BR"><head>
+const head = (titulo, descricao, canonical, jsonld, ogImg) => `<!doctype html><html lang="pt-BR"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${titulo}</title>
 <meta name="description" content="${descricao}">
@@ -88,7 +94,7 @@ const head = (titulo, descricao, canonical, jsonld) => `<!doctype html><html lan
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:type" content="article"><meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="${titulo}"><meta property="og:description" content="${descricao}">
-<meta property="og:url" content="${canonical}"><meta property="og:image" content="${ORIGIN}/og.jpg">
+<meta property="og:url" content="${canonical}"><meta property="og:image" content="${ORIGIN}/${ogImg || 'og.jpg'}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -122,16 +128,17 @@ function artigoHTML(a, idx) {
     headline: a.titulo, description: a.descricao, datePublished: a.dataISO,
     author: { '@type': 'Person', name: site.nome },
     publisher: { '@type': 'Organization', name: 'Dr. Vinícius Graton' },
-    mainEntityOfPage: url, image: `${ORIGIN}/og.jpg`,
+    mainEntityOfPage: url, image: `${ORIGIN}/${a.img || 'og.jpg'}`,
   }
   const outros = artigosOrdenados.filter((x) => x.slug !== a.slug).slice(0, 3)
   const related = outros.length
     ? `<div class="related"><h3>Veja também</h3>${outros.map((o) => `<a href="/dicas/${o.slug}/">${o.titulo}</a>`).join('')}</div>`
     : ''
-  return head(`${a.titulo} | Dr. Vinícius Graton`, a.descricao, url, jsonld) + header +
+  return head(`${a.titulo} | Dr. Vinícius Graton`, a.descricao, url, jsonld, a.img) + header +
     `<main class="container"><div class="crumb"><a href="/">Início</a> › <a href="/dicas/">Dicas</a> › ${a.categoria}</div>
      <article class="post"><span class="eyebrow">${a.categoria}</span><h1>${a.titulo}</h1>
      <div class="meta">${a.data} · ${min} min de leitura</div>
+     ${a.img ? `<div class="post__cover"><img src="/${a.img}" alt="${a.titulo}"></div>` : ''}
      ${a.html}
      ${ctaBox}
      ${related}
@@ -142,8 +149,9 @@ function artigoHTML(a, idx) {
 function listaHTML() {
   const url = `${ORIGIN}/dicas/`
   const cards = artigosOrdenados.map((a) => `<a class="card" href="/dicas/${a.slug}/">
-    <span class="eyebrow">${a.categoria}</span><h2>${a.titulo}</h2><p>${a.descricao}</p>
-    <span class="more">Ler artigo →</span></a>`).join('')
+    ${a.img ? `<div class="card__cover"><img src="/${a.img}" alt="${a.titulo}" loading="lazy"></div>` : ''}
+    <div class="card__body"><span class="eyebrow">${a.categoria}</span><h2>${a.titulo}</h2><p>${a.descricao}</p>
+    <span class="more">Ler artigo →</span></div></a>`).join('')
   return head('Dicas de Saúde | Dr. Vinícius Graton', 'Artigos de nutrição clínica do Dr. Vinícius Graton: emagrecimento, saúde intestinal, hormônios e hábitos para viver melhor.', url) + header +
     `<section class="hero-blog"><div class="container wrap"><h1>Dicas de Saúde</h1><p>Conteúdo de nutrição clínica para você comer melhor, desinchar, emagrecer com saúde e cuidar do seu corpo — sem dietas malucas.</p></div></section>
      <main class="container wrap"><div class="grid">${cards}</div>${ctaBox}</main>` + footerFinal

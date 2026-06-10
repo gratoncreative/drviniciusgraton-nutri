@@ -13,6 +13,7 @@ export const artigos = [
     categoria: 'Saúde intestinal',
     data: '2 de junho de 2026',
     dataISO: '2026-06-02',
+    img: 'blog-como-desinchar-a-barriga.jpg',
     html: `
       <p>Acordar com a barriga relativamente lisa e terminar o dia parecendo que "engoliu um balão" é uma queixa muito comum no consultório. Na maioria das vezes, o inchaço abdominal não é gordura — é uma combinação de gases, retenção de líquidos e digestão lenta. A boa notícia: pequenos ajustes resolvem grande parte dos casos.</p>
 
@@ -49,6 +50,7 @@ export const artigos = [
     categoria: 'Emagrecimento',
     data: '4 de junho de 2026',
     dataISO: '2026-06-04',
+    img: 'blog-o-que-comer-para-emagrecer-com-saude.jpg',
     html: `
       <p>Quem nunca tentou uma dieta super restritiva, perdeu peso rápido e recuperou tudo (às vezes com juros)? Esse é o famoso efeito sanfona. Emagrecer com saúde é o oposto disso: comer bem o suficiente para o corpo confiar que pode liberar gordura, sem viver com fome.</p>
 
@@ -89,6 +91,7 @@ export const artigos = [
     categoria: 'Saúde intestinal',
     data: '6 de junho de 2026',
     dataISO: '2026-06-06',
+    img: 'blog-intestino-preso-o-que-comer.jpg',
     html: `
       <p>Ir ao banheiro menos de três vezes por semana, com esforço ou sensação de evacuação incompleta, já caracteriza prisão de ventre. Além do desconforto, o intestino preso impacta o humor, a disposição e até a saúde da pele. A alimentação é a primeira (e mais poderosa) ferramenta para regular.</p>
 

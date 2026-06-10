@@ -15,6 +15,7 @@ export const IconMenu = (p) => (<svg {...S(p)}><path d="M4 7h16M4 12h16M4 17h16"
 export const IconClose = (p) => (<svg {...S(p)}><path d="M6 6l12 12M18 6 6 18"/></svg>)
 
 export const IconScale = (p) => (<svg {...S(p)}><path d="M12 3v18M7 21h10"/><path d="M5 7h14l-3.5 7a3 3 0 0 1-7 0L5 7Z"/><circle cx="12" cy="5" r="1.5"/></svg>)
+export const IconApple = (p) => (<svg {...S(p)}><path d="M9 7.2C7.2 6.2 4.8 7 4.2 9.4c-.6 2.6.4 6 2.4 8.4.9 1.1 1.9 1.9 3.2 1.9 1 0 1.6-.5 2.2-.5s1.2.5 2.2.5c1.3 0 2.3-.8 3.2-1.9 2-2.4 3-5.8 2.4-8.4C19.2 7 16.8 6.2 15 7.2c-1 .6-1.7 1.1-3 1.1s-2-.5-3-1.1Z"/><path d="M12 8.3c0-2 1.3-3.8 3.4-4"/></svg>)
 export const IconGut = (p) => (<svg {...S(p)}><path d="M8 3v3a3 3 0 0 0 3 3 3 3 0 0 1 3 3 3 3 0 0 0 3 3v3"/><path d="M5 8a4 4 0 0 0 4 4 4 4 0 0 1 4 4 4 4 0 0 0 4 4"/></svg>)
 export const IconHeart = (p) => (<svg {...S(p)}><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1 4 2.5 1-1.5 2-2.5 4-2.5 3.5 0 5 3.5 3.5 6.5C19 15.5 12 20 12 20Z"/></svg>)
 export const IconPulse = (p) => (<svg {...S(p)}><path d="M3 12h4l2.5-7 5 14L17 12h4"/></svg>)
