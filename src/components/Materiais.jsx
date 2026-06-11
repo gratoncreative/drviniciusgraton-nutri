@@ -6,7 +6,7 @@ import { IconArrow, IconCheck, IconClose } from './Icons'
 
 const LS_KEY = 'vg_lead_cadastrado'
 
-export default function Materiais() {
+export default function Materiais({ hideHeader = false }) {
   const [alvo, setAlvo] = useState(null) // material clicado
   const [form, setForm] = useState({ nome: '', email: '', whatsapp: '' })
   const [estado, setEstado] = useState('idle') // idle | enviando | ok | erro
@@ -63,11 +63,13 @@ export default function Materiais() {
   return (
     <section className="section" id="materiais" style={{ background: 'var(--cream)' }}>
       <div className="container">
-        <div className="center">
-          <Reveal><span className="eyebrow">Materiais gratuitos</span></Reveal>
-          <Reveal delay={0.05}><h2 className="section-title">Ferramentas práticas para começar hoje</h2></Reveal>
-          <Reveal delay={0.1}><p className="section-lead">Guias e ferramentas em PDF, feitos por mim, para você dar o primeiro passo — é só se cadastrar e baixar.</p></Reveal>
-        </div>
+        {!hideHeader && (
+          <div className="center">
+            <Reveal><span className="eyebrow">Materiais gratuitos</span></Reveal>
+            <Reveal delay={0.05}><h2 className="section-title">Ferramentas práticas para começar hoje</h2></Reveal>
+            <Reveal delay={0.1}><p className="section-lead">Guias e ferramentas em PDF, feitos por mim, para você dar o primeiro passo — é só se cadastrar e baixar.</p></Reveal>
+          </div>
+        )}
         <div className="grid-3">
           {materiais.map((m, i) => (
             <Reveal key={m.id} delay={i * 0.06}>

@@ -1,19 +1,21 @@
 import { useEffect, useState } from 'react'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { site, whatsappLink } from '../data/site'
 import { IconMenu, IconClose, IconWhats } from './Icons'
 
 const LINKS = [
-  ['Para quem é', '#para-quem'],
-  ['Como funciona', '#processo'],
-  ['Atendimentos', '#servicos'],
-  ['Materiais', '#materiais'],
+  ['Especialidades', '/especialidades'],
+  ['Consultas', '/consultas'],
+  ['Materiais', '/materiais'],
   ['Dicas de Saúde', '/dicas/'],
-  ['Dúvidas', '#faq'],
+  ['Dúvidas', '/faq'],
 ]
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -24,22 +26,29 @@ export default function Nav() {
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [open])
 
+  useEffect(() => { setOpen(false) }, [pathname])
+
+  const solid = scrolled || !isHome
+
   return (
-    <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+    <header className={`nav ${solid ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
-        <a href="#topo" className="nav__brand" aria-label="Início">
+        <Link to="/" className="nav__brand" aria-label="Início">
           <img className="nav__mark" src={`${import.meta.env.BASE_URL}logo-mark.svg`} alt="" width="42" height="42" />
           <span>
             Dr. Vinícius Graton
             <small>{site.profissao}</small>
           </span>
-        </a>
+        </Link>
 
         <nav className="nav__links">
           {LINKS.map(([label, href]) => (
-            <a key={href} href={href}>{label}</a>
+            href.startsWith('/dicas')
+              ? <a key={href} href={href}>{label}</a>
+              : <NavLink key={href} to={href} className={({ isActive }) => isActive ? 'nav-active' : undefined}>{label}</NavLink>
           ))}
         </nav>
 
@@ -59,7 +68,9 @@ export default function Nav() {
           <IconClose />
         </button>
         {LINKS.map(([label, href]) => (
-          <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
+          href.startsWith('/dicas')
+            ? <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
+            : <NavLink key={href} to={href} onClick={() => setOpen(false)}>{label}</NavLink>
         ))}
         <a className="btn btn--primary" href={whatsappLink()} target="_blank" rel="noopener" onClick={() => setOpen(false)}>
           <IconWhats /> Agendar pelo WhatsApp

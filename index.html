@@ -47,6 +47,16 @@
       }
     }
     </script>
+    <!-- GitHub Pages SPA routing -->
+    <script>
+      (function(){
+        var r = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (r && r !== location.href) {
+          history.replaceState(null, null, new URL(r).pathname + new URL(r).search + new URL(r).hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
