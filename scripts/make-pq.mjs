@@ -9,7 +9,7 @@ const pub = join(__dirname, '..', 'public')
 
 // position 'centre' para fotos com pessoas (evita cortar a pessoa); 'attention' para comida
 const nomes = {
-  emagrecimento: 'attention', intestino: 'attention', mulher: 'centre',
+  emagrecimento: 'centre', intestino: 'attention', mulher: 'centre',
   performance: 'centre', reeducacao: 'attention', metabolica: 'attention',
 }
 for (const [n, pos] of Object.entries(nomes)) {

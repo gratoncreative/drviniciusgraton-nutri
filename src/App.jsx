@@ -145,7 +145,7 @@ export default function App() {
           <div className="container">
             <div className="center">
               <Reveal><span className="eyebrow">Para quem é</span></Reveal>
-              <Reveal delay={0.05}><h2 className="section-title">Se você se identifica com algum desses pontos, posso te ajudar</h2></Reveal>
+              <Reveal delay={0.05}><h2 className="section-title" style={{ maxWidth: '24ch' }}>Reconhece algum desses? Posso te ajudar.</h2></Reveal>
             </div>
             <div className="grid-3">
               {PAINS.map((p, i) => {
