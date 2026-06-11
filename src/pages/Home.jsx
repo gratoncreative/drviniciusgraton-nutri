@@ -111,19 +111,6 @@ export default function Home() {
       <section className="feed-section" id="conteudo">
         <div className="container">
 
-          {/* Banner de entrada */}
-          <Reveal>
-            <a href="/especialidades" className="comecar-banner">
-              <div className="comecar-banner__left">
-                <span className="eyebrow" style={{ color: 'var(--gold-300)' }}>
-                  Para quem é este trabalho?
-                </span>
-                <p>Saiba se posso te ajudar — emagrecimento, intestino, hormônios e muito mais.</p>
-              </div>
-              <span className="btn btn--gold">Começar <IconArrow /></span>
-            </a>
-          </Reveal>
-
           {/* Cabeçalho do feed */}
           <Reveal>
             <div className="feed-section__head">
